@@ -39,18 +39,7 @@ app/src/main/java/com/sante/priceindex/
 
 ## 🏗 Setup & Installation
 
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-username/SantePriceIndex.git
-    ```
-2.  **Open in Android Studio**:
-    -   Go to `File -> Open` and select the `SantePriceIndex` directory.
-3.  **Firebase Configuration**:
-    -   Create a new project in the [Firebase Console](https://console.firebase.google.com/).
-    -   Add an Android App with the package name `com.sante.priceindex`.
-    -   Download `google-services.json` and place it in the `app/` directory.
-4.  **Build & Run**:
-    -   Click the **Run** button in Android Studio to deploy the app to an emulator or physical device.
+-  Download the app-debug.apk Click the **Run** button in Android Studio to deploy the app to an emulator or physical device.
 
 ## 📄 License
 
