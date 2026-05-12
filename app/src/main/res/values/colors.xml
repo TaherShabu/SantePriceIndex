@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#14532D</color>
+    <color name="colorPrimaryDark">#062312</color>
+    <color name="colorPrimaryLight">#DCFCE7</color>
+    <color name="colorAccent">#166534</color>
+    <color name="colorBackground">#F8FAFC</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurface2">#F1F5F9</color>
+    <color name="colorTextPrimary">#0F172A</color>
+    <color name="colorTextSecondary">#475569</color>
+    <color name="colorBorder">#E2E8F0</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorRising">#C62828</color>
+    <color name="colorFalling">#1565C0</color>
+    <color name="colorStable">#558B2F</color>
+    <!-- Digital Slate colors -->
+    <color name="colorSlateBackground">#000000</color>
+    <color name="colorSlateText">#FFD600</color>
+    <color name="colorSlatePrice">#FFFFFF</color>
+</resources>

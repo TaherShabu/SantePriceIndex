@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorBackground">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="64dp"
+        android:background="@color/colorSurface" android:gravity="center_vertical"
+        android:paddingStart="16dp" android:paddingEnd="16dp"
+        android:elevation="4dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="@string/logo_text_sante"
+            android:textColor="#0F172A" android:textSize="18sp" android:textStyle="bold"
+            android:letterSpacing="0.05" />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/logo_text_index" android:textColor="#166534" android:textSize="18sp"
+            android:textStyle="bold" android:letterSpacing="0.05" />
+    </LinearLayout>
+
+    <FrameLayout android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:background="@color/colorSurface"
+        app:itemIconTint="@color/nav_color" app:itemTextColor="@color/nav_color"
+        app:menu="@menu/bottom_nav_menu" app:labelVisibilityMode="labeled" />
+
+</LinearLayout>

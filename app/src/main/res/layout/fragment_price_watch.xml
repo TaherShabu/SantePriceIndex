@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorBackground">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:background="@color/colorSurface" android:padding="12dp"
+        android:elevation="2dp" android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:id="@+id/tvPriceCount"
+            android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:textSize="13sp" android:textColor="@color/colorTextSecondary" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRefresh" android:layout_width="wrap_content" android:layout_height="36dp"
+            android:text="🔄 Refresh" android:textSize="12sp"
+            android:backgroundTint="@color/colorPrimaryLight" android:textColor="@color/colorPrimary"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+    </LinearLayout>
+
+    <ProgressBar android:id="@+id/progressBar" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center_horizontal"
+        android:visibility="gone" android:indeterminateTint="@color/colorPrimary"
+        android:layout_marginTop="16dp" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none" android:paddingTop="8dp" android:paddingBottom="4dp">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupCategory"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:paddingStart="16dp" android:paddingEnd="16dp"
+            app:singleSelection="true" app:selectionRequired="true"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll" style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="All" android:checked="true" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipVeg" style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Vegetables" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipFruit" style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Fruits" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipSpice" style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Spices" />
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGrain" style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Grains" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rvMandiPrices"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+        android:paddingTop="8dp" android:paddingStart="12dp" android:paddingEnd="12dp"
+        android:paddingBottom="8dp" android:clipToPadding="false" android:overScrollMode="never"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

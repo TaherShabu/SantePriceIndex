@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/colorBackground" android:overScrollMode="never">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="14dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="💰 Profit Calculator" android:textSize="18sp" android:textStyle="bold"
+            android:textColor="@color/colorPrimary" android:layout_marginBottom="14dp" />
+
+        <!-- Commodity picker -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:orientation="vertical"
+            android:padding="14dp" android:layout_marginBottom="10dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Select Commodity" android:textSize="12sp" android:textStyle="bold"
+                android:textColor="@color/colorTextSecondary" android:layout_marginBottom="6dp" />
+
+            <Spinner android:id="@+id/spinnerCommodity"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:background="@drawable/bg_card" android:paddingStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Inputs card -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:orientation="vertical"
+            android:padding="14dp" android:layout_marginBottom="10dp">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Your Costs" android:textSize="13sp" android:textStyle="bold"
+                android:textColor="@color/colorPrimary" android:layout_marginBottom="10dp" />
+
+            <!-- Mandi price override -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="10dp">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:hint="Mandi Price (₹)" android:layout_marginEnd="6dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMandiPrice" android:layout_width="match_parent"
+                        android:layout_height="wrap_content" android:inputType="numberDecimal" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <TextView android:id="@+id/tvSelectedUnit" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:textSize="12sp"
+                    android:textColor="@color/colorTextSecondary" android:text="per kg" />
+            </LinearLayout>
+
+            <!-- Quantity -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Quantity Bought (kg / units)"
+                android:layout_marginBottom="10dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etQuantity" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Transport -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:hint="Total Transport Cost (₹)"
+                android:layout_marginBottom="14dp"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etTransport" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Wastage slider -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Wastage / Unsold" android:textSize="12sp" android:textStyle="bold"
+                    android:textColor="@color/colorTextSecondary" />
+                <TextView android:id="@+id/tvWastageVal" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="10%"
+                    android:textSize="13sp" android:textStyle="bold" android:textColor="@color/colorRising" />
+            </LinearLayout>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderWastage"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="0" android:valueTo="50" android:value="10" android:stepSize="1"
+                android:layout_marginBottom="10dp" />
+
+            <!-- Profit slider -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="Desired Profit" android:textSize="12sp" android:textStyle="bold"
+                    android:textColor="@color/colorTextSecondary" />
+                <TextView android:id="@+id/tvProfitVal" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="20%"
+                    android:textSize="13sp" android:textStyle="bold" android:textColor="@color/colorStable" />
+            </LinearLayout>
+            <com.google.android.material.slider.Slider android:id="@+id/sliderProfit"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:valueFrom="0" android:valueTo="100" android:value="20" android:stepSize="1" />
+        </LinearLayout>
+
+        <!-- Result card -->
+        <LinearLayout android:id="@+id/cardResult"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_card" android:orientation="vertical"
+            android:padding="14dp" android:layout_marginBottom="10dp" android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="✅ Recommended Retail Price" android:textSize="12sp" android:textStyle="bold"
+                android:textColor="@color/colorTextSecondary" android:layout_marginBottom="6dp" />
+
+            <!-- BIG RRP -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/bg_rrp_box" android:gravity="center"
+                android:padding="16dp" android:layout_marginBottom="12dp">
+                <TextView android:id="@+id/tvRRP"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="₹0/kg" android:textSize="44sp" android:textStyle="bold"
+                    android:textColor="#FFD600" />
+            </LinearLayout>
+
+            <TextView android:id="@+id/tvCostPrice" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="@color/colorTextPrimary" android:layout_marginBottom="4dp" />
+            <TextView android:id="@+id/tvBreakEven" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="@color/colorTextSecondary" android:layout_marginBottom="4dp" />
+            <TextView android:id="@+id/tvTransportPerUnit" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="@color/colorTextSecondary" android:layout_marginBottom="4dp" />
+            <TextView android:id="@+id/tvMargin" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="14sp" android:textStyle="bold"
+                android:textColor="@color/colorStable" android:layout_marginBottom="8dp" />
+
+            <TextView android:id="@+id/tvOverpricedWarn" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="⚠️ Price seems high vs market — customers may go elsewhere."
+                android:textSize="12sp" android:textColor="@color/colorRising"
+                android:textStyle="bold" android:visibility="gone" android:layout_marginBottom="6dp" />
+
+            <TextView android:id="@+id/tvInsight" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:textSize="13sp"
+                android:textColor="@color/colorPrimary" android:lineSpacingMultiplier="1.4"
+                android:background="@color/colorPrimaryLight" android:padding="10dp"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddToSlate"
+                android:layout_width="match_parent" android:layout_height="48dp"
+                android:text="📋 Add to Price Board"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/colorWhite"
+                style="@style/Widget.MaterialComponents.Button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

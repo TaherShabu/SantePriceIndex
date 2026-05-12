@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_watch"  android:icon="@android:drawable/ic_menu_search"   android:title="@string/nav_watch" />
+    <item android:id="@+id/nav_calc"   android:icon="@android:drawable/ic_menu_edit"     android:title="@string/nav_calc" />
+    <item android:id="@+id/nav_slate"  android:icon="@android:drawable/ic_menu_gallery"  android:title="@string/nav_slate" />
+    <item android:id="@+id/nav_trends" android:icon="@android:drawable/ic_menu_recent_history" android:title="@string/nav_trends" />
+</menu>

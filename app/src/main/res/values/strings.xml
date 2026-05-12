@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sante-Price Index</string>
+    <string name="logo_text_sante">SANTE-PRICE</string>
+    <string name="logo_text_index">INDEX</string>
+    <string name="tagline">Vendor\'s Intelligence · Fair Price Tool</string>
+    <string name="nav_watch">Price Watch</string>
+    <string name="nav_calc">Profit Calc</string>
+    <string name="nav_slate">Price Board</string>
+    <string name="nav_trends">Trends</string>
+</resources>
